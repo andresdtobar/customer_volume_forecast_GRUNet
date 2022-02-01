@@ -172,12 +172,13 @@ class customer_forecast():
         np.savetxt('output/predictions.txt', predicted, fmt='%i') 
 
 
-model = customer_forecast()
+if __name__ == '__main__':
+    model = customer_forecast()
 
-if action == 'update':
-    model.update_data(tienda)
-elif action == 'train':
-    model.train(tienda)
-elif action == 'predict':
-    model.predict_next(tienda)
+    if action == 'update':
+        model.update_data(tienda)
+    elif action == 'train':
+        model.train(tienda)
+    elif action == 'predict':
+        model.predict_next(tienda)
 
